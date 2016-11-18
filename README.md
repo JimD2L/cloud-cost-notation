@@ -114,17 +114,17 @@ Suppose a service has a cost of `11 droplets`, computed as follows.
 
 |Cost |Item |
 |-----|-----|
-|`2d` |(2 elastic beanstalk load balancers) |
+|`4d` |(2 elastic beanstalk load balancers) |
 |`4d` |(4 t2.micro instances) |
 |`1d` |(100 provisioned DynamoDB reads) |
 |`3d` |(1 small elasticache instance) |
 |`1d` |(1 million SQS messages) |
 |==== |======================== |
-|`11d`|droplets total |
+|`13d`|droplets total |
 
 Our testing shows that an increase in traffic from 3 requests/second (today) to 33 requests/second (anticipated maximum load a year from now) would require increasing the provisioned DynamoDB capacity to 980 reads (`+9d`). The number of SQS messages would increase to 10 million (`+0d`). No changes to the number of EC2 instances are required (`+0d`).
 
-Therefore, increasing traffic to 1100% would scale the cost from `11d` to `20d`.
+Therefore, increasing traffic to 1100% would scale the cost from `13d` to `22d`.
 
 ### Scaling notation
 > Note: The scaling notation section is a work in progress.
